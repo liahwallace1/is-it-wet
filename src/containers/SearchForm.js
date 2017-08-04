@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { changeSearchTerm } from '../actions/searchFormActions';
 import { Form, FormGroup, FormControl, ControlLabel, Button, Glyphicon } from 'react-bootstrap';
 
 class SearchForm extends Component {
@@ -9,10 +10,10 @@ class SearchForm extends Component {
     this.props.dispatch(changeSearchTerm(value))
   }
 
-  handleSubmit = event => {
-    event.preventDefault()
-
-  }
+  // handleSubmit(e) {
+  //   e.preventDefault()
+  //   this.props.dispatch(searchLocation)
+  // }
 
   render() {
     return (
@@ -20,7 +21,7 @@ class SearchForm extends Component {
         <FormGroup controlId="formInlineName">
           <ControlLabel>Search:</ControlLabel>
             {' '}
-          <FormControl type="text" value={this.state.searchTerm} placeholder="enter location" onChange={this.handleChange}/>
+          <FormControl type="text" value={this.props.searchTerm} placeholder="enter location" onChange={this.handleChange}/>
         </FormGroup>
         {' '}
         <Button type="submit">
