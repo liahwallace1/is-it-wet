@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchForm from './SearchForm';
+import {ConnectedSearchForm} from './SearchForm';
 import logo from '../logo.svg';
 import header from '../StockSnap_C3E239A4B9.jpg';
 import './App.css';
@@ -31,7 +31,7 @@ class App extends Component {
             fetchingData ?
             <img src={logo} className="App-logo" alt="logo" />
             :
-            <SearchForm />
+            <ConnectedSearchForm />
           }
         </div>
       </div>
