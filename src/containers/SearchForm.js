@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Form, FormGroup, FormControl, ControlLabel, Button, Glyphicon } from 'react-bootstrap';
 
 class SearchForm extends Component {
-  constructor() {
-    super()
 
-    this.state = {
-      searchTerm: "",
-    }
-  }
-
-  handleChange = event => {
-    this.setState({
-      searchTerm: event.target.value
-    })
+  handleChange(e) {
+    let value = e.target.value
+    this.props.dispatch(changeSearchTerm(value))
   }
 
   handleSubmit = event => {
@@ -38,4 +31,10 @@ class SearchForm extends Component {
   }
 }
 
-export default SearchForm
+const mapStateToProps = (state) => {
+  return {
+    searchTerm: state.searchTerm,
+  }
+}
+
+export const ConnectedSearchForm = connect(mapStateToProps)(SearchForm)
