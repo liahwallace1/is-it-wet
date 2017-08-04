@@ -15,13 +15,19 @@ class SearchForm extends Component {
       searchTerm: event.target.value
     })
   }
+
+  handleSubmit = event => {
+    event.preventDefault()
+
+  }
+
   render() {
     return (
-      <Form inline>
+      <Form inline onSubmit={this.handleSubmit}>
         <FormGroup controlId="formInlineName">
           <ControlLabel>Search:</ControlLabel>
             {' '}
-          <FormControl type="text" value={this.state.searchTerm} placeholder="zip code or city" onChange={this.handleChange}/>
+          <FormControl type="text" value={this.state.searchTerm} placeholder="enter location" onChange={this.handleChange}/>
         </FormGroup>
         {' '}
         <Button type="submit">
