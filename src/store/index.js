@@ -4,10 +4,10 @@ import {
   combineReducers
 } from 'redux';
 import thunk from 'redux-thunk';
-// import restaurantData from '../reducers/restaurantDataReducer';
+import mapSearch from '../reducers/mapSearchReducer';
 
 const reducers = combineReducers({
-
+  mapSearch
 })
 const middleware = [thunk]
 
