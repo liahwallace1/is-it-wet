@@ -8,15 +8,13 @@
 }
 
 .App-header {
-  background: url(./StockSnap_C3E239A4B9.jpg) no-repeat center center fixed;
+  background: url(./StockSnap_C3E239A4B9.jpg);
   background-color: #222;
-  height: 60vh;
   color: white;
 }
 
 .App-header h1 {
-  /*font-size: 74px;*/
-  padding-bottom: 15px;
+  color: white;
   -webkit-text-fill-color: white;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #009AEE;
@@ -28,12 +26,8 @@
       1px 1px 0 #000;
 }
 
-
-.header-container {
-	padding: 50px;
-	background: rgba(0, 0, 0, .5);
-	color: white;
-	position: absolute;
+.App-header p {
+  color: white;
 }
 
 .App-intro {

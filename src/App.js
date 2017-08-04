@@ -23,11 +23,8 @@ class App extends Component {
     return (
       <div className="App">
         <Jumbotron className="App-header">
-          <Col className="header-container" xs={8} md={4} xsOffset={2} mdOffset={4}>
             <h1><strong>Is it wet?</strong> 💦</h1>
-            <br />
-            <p>Find current forecast AND past weather data to determine if conditions are wet!</p>
-          </Col>
+            <p>Predict conditions based on current forecast and past weather data</p>
         </Jumbotron>
         <div className="App-intro">
           {
@@ -43,3 +40,5 @@ class App extends Component {
 }
 
 export default App;
+
+// Photo by Mike Newbry on Unsplash

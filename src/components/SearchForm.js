@@ -9,13 +9,19 @@ class SearchForm extends Component {
       searchTerm: "",
     }
   }
+
+  handleChange = event => {
+    this.setState({
+      searchTerm: event.target.value
+    })
+  }
   render() {
     return (
       <Form inline>
         <FormGroup controlId="formInlineName">
           <ControlLabel>Search:</ControlLabel>
             {' '}
-          <FormControl type="text" placeholder="zip code or city" />
+          <FormControl type="text" value={this.state.searchTerm} placeholder="zip code or city" onChange={this.handleChange}/>
         </FormGroup>
         {' '}
         <Button type="submit">
