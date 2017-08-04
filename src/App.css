@@ -8,10 +8,38 @@
 }
 
 .App-header {
+  background: url(./StockSnap_C3E239A4B9.jpg) no-repeat center center fixed;
   background-color: #222;
-  height: 150px;
+  height: 500px;
   padding: 20px;
-  color: white;
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+
+}
+
+.App-header h2 {
+  font-size: 74px;
+  padding-bottom: 15px;
+  text-shadow:
+      3px 3px 0 #000,
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.App-header p {
+  font-size: 30px;
+}
+
+.header-container {
+	padding: 50px;
+	background: rgba(0, 0, 0, .6);
+	color: white;
+	position: absolute;
+  margin-top: 50px;
 }
 
 .App-intro {
