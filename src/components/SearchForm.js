@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, FormGroup, FormControl, ControlLabel, Button, Glyphicon } from 'react-bootstrap';
 
 class SearchForm extends Component {
   constructor() {
@@ -10,7 +11,17 @@ class SearchForm extends Component {
   }
   render() {
     return (
-      <form><label>Search location: </label><input type='text' placeholder="zip code or city" /><input type="submit" /></form>
+      <Form inline>
+        <FormGroup controlId="formInlineName">
+          <ControlLabel>Search:</ControlLabel>
+            {' '}
+          <FormControl type="text" placeholder="zip code or city" />
+        </FormGroup>
+        {' '}
+        <Button type="submit">
+          <Glyphicon glyph="glyphicon glyphicon-search" />
+        </Button>
+      </Form>
     )
   }
 }
