@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchForm from './components/SearchForm';
 import logo from './logo.svg';
 import header from './StockSnap_C3E239A4B9.jpg';
 import './App.css';
@@ -23,7 +24,7 @@ class App extends Component {
       <div className="App">
         <Jumbotron className="App-header">
           <Col className="header-container" xs={8} md={4} xsOffset={2} mdOffset={4}>
-            <h1>Is it wet? 💦</h1>
+            <h1><strong>Is it wet?</strong> 💦</h1>
             <br />
             <p>Find current forecast AND past weather data to determine if conditions are wet!</p>
           </Col>
@@ -33,7 +34,7 @@ class App extends Component {
             fetchingData ?
             <img src={logo} className="App-logo" alt="logo" />
             :
-            <form><label>Search location: </label><input type='text' placeholder="zip code or city" /><input type="submit" /></form>
+            <SearchForm />
           }
         </div>
       </div>
