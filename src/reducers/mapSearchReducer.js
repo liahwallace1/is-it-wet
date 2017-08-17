@@ -1,5 +1,6 @@
 let initialState = {
   searchTerm: "",
+  location: {lat: 32.765914, lng: -79.899101}
 }
 
 const mapSearch = (state = initialState, action) => {

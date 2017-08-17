@@ -2,12 +2,27 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import logo from '../logo.svg';
 
+// const positionPermission = () => {
+//   navigator.permissions && navigator.permissions.query({name: 'geolocation'}).then(function(PermissionStatus) {
+//     if(PermissionStatus.state == 'granted') {
+//       return true
+//     } else {
+//       return false
+//     }
+//   })
+// }
+//
+// const getPosition = () => {
+//   navigator.geolocation.getCurrentPosition(currentLoc => {
+//     return {lat: currentLoc.coords.latitude, lng: currentLoc.coords.longitude}
+//   })
+// }
+
+
 class Map extends Component {
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(currentLoc => {
-      debugger
-      const position = currentLoc !== undefined ? {lat: currentLoc.coords.latitude, lng: currentLoc.coords.longitude} : {lat: 32.765914, lng: -79.899101}
+    let position = this.props.location
       console.log(position)
       const map = new this.props.google.maps.Map(this.refs.map, {
         center: position,
@@ -18,7 +33,6 @@ class Map extends Component {
         position: position
       })
       window.scrollTo(0,document.body.scrollHeight)
-    })
   }
 
  render() {
@@ -37,7 +51,7 @@ class Map extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    location: state.location,
+    location: state.mapSearch.location,
   }
 }
 
