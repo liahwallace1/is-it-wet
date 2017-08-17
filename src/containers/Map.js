@@ -32,6 +32,7 @@ class Map extends Component {
         map: map,
         position: position
       })
+      new this.props.google.maps.Geocoder()
       window.scrollTo(0,document.body.scrollHeight)
   }
 
