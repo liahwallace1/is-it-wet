@@ -18,6 +18,9 @@ class App extends Component {
       weatherData: {}
     }
   }
+  // componentDidMount() {
+  //   this.props.setLocation()
+  // }
 
   render() {
     const {fetchingData} = this.state
