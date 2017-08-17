@@ -4,8 +4,8 @@ export const changeSearchTerm = (value) => {
   }
 }
 
-export const searchLocation = (searchTerm) => {
+export const geocodeLocation = (location) => {
   return {
-    type: 'SEARCH_LOCATION', searchTerm
+    type: 'GEOCODE_LOCATION', location
   }
 }

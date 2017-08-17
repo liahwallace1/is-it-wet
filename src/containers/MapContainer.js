@@ -17,7 +17,7 @@ class MapContainer extends Component {
     }
     return (
       <div className='map-container' style={style}>
-        <ConnectedSearchForm />
+        <ConnectedSearchForm google={this.props.google}/>
         <ConnectedMap google={this.props.google} />
       </div>
     )

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeSearchTerm } from '../actions/searchFormActions';
+import { changeSearchTerm, updateLocation } from '../actions/searchFormActions';
 import { Form, FormGroup, FormControl, ControlLabel, Button, Glyphicon } from 'react-bootstrap';
 
 class SearchForm extends Component {
@@ -11,8 +11,12 @@ class SearchForm extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault()
-    // this.props.dispatch(searchLocation)
+    e.preventDefault();
+    this.props.google.maps.Geocoder.geocode({'address': this.props.searchTerm}, function handleResults(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        this.props.dispatch(updateLocation(results[0].geometry.location))
+      }
+    })
   }
 
   render() {
