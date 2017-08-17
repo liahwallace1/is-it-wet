@@ -10,10 +10,10 @@ class SearchForm extends Component {
     this.props.dispatch(changeSearchTerm(value))
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault()
-  //   this.props.dispatch(searchLocation)
-  // }
+  handleSubmit(e) {
+    e.preventDefault()
+    // this.props.dispatch(searchLocation)
+  }
 
   render() {
     return (
@@ -21,7 +21,7 @@ class SearchForm extends Component {
         <FormGroup controlId="formInlineName">
           <ControlLabel>Search:</ControlLabel>
             {' '}
-          <FormControl type="text" value={this.props.searchTerm} placeholder="enter location" onChange={this.handleChange}/>
+          <FormControl type="text" className="search-form" value={this.props.searchTerm} placeholder="enter location" onChange={this.handleChange} required />
         </FormGroup>
         {' '}
         <Button type="submit">
@@ -34,7 +34,7 @@ class SearchForm extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    searchTerm: state.searchTerm,
+    searchTerm: state.mapSearch.searchTerm,
   }
 }
 

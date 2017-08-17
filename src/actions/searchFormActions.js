@@ -3,3 +3,9 @@ export const changeSearchTerm = (value) => {
     type: 'CHANGE_SEARCH_TERM', value
   }
 }
+
+export const searchLocation = (searchTerm) => {
+  return {
+    type: 'SEARCH_LOCATION', searchTerm
+  }
+}
